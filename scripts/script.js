@@ -15,6 +15,9 @@ const elementCarrozza = document.getElementById('nCarrozza');
 const elementCode = document.getElementById('cpCode');
 const price = document.getElementById('price');
 
+//CREATING USER NAME INPUT VALIDATOR
+var regName = /^[a-zA-Z]+ [a-zA-Z]+$/;
+
 //GENERATE FUNCTION 
 function genera() {
     //RANDOM NUMBERS
@@ -27,7 +30,7 @@ function genera() {
     console.log(distNum);
     console.log(etaNum);
     //VERIFICA INSERIMENTO DATI
-    if (!(distNum <= 0) && !(etaNum < 0) && !(distNum === NaN) && !(etaNum === NaN)) {
+    if (!(distNum <= 0) && !(etaNum < 0) && !(distNum === NaN) && !(etaNum === NaN) && (regName.test(nomeUtente.value))) {
         ticketToggle.classList.remove("display-none");
         //VERIFICA ETA
         if (etaNum >= 18 && etaNum <= 65) {

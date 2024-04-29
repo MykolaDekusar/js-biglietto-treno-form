@@ -33,6 +33,20 @@
     display: flex;
 }
 
+.azure {
+    background-color: aqua;
+    padding-left: 5rem;
+}
+
+.white-text {
+    color: white;
+}
+
+thead tr th:first-child,
+tbody tr td:first-child {
+    background-color: rgba(0, 0, 0, 0.651);
+}
+
 table {
     width: 100%;
     text-align: center;
