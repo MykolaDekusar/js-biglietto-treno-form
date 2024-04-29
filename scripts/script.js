@@ -8,7 +8,7 @@ const ticketPrice = 0.21;
 const discountU18 = 20;
 const discountO65 = 40;
 
-//ASSIGNING VARIABLES TO TABLE
+//ASSIGNING TABLE VARIABLES
 const clientName = document.getElementById('clientName');
 const ticketType = document.getElementById('ticketType');
 const elementCarrozza = document.getElementById('nCarrozza');
@@ -33,30 +33,22 @@ function genera() {
         if (etaNum >= 18 && etaNum <= 65) {
             distNum = Math.round((distNum * ticketPrice) * 100) / 100;
             console.log("Il prezzo del biglietto è di " + distNum + "€");
-            clientName.innerHTML = nomeUtente.value;
             ticketType.innerHTML = "Biglietto Standard";
-            elementCarrozza.innerHTML = nCarrozza;
-            elementCode.innerHTML = cpCode;
-            price.innerHTML = distNum + "€";
         }
         if (etaNum < 18) {
             distNum = Math.round(((distNum * ticketPrice) - ((distNum * ticketPrice) * (discountU18 / 100))) * 100) / 100;//CALCOLO DELLO SCONTO APPROSSIMATO A 2 CIFRE DECIMALI
             console.log("Il prezzo del biglietto è di " + distNum + "€");
-            clientName.innerHTML = nomeUtente.value;
             ticketType.innerHTML = "Biglietto Under 18";
-            elementCarrozza.innerHTML = nCarrozza;
-            elementCode.innerHTML = cpCode;
-            price.innerHTML = distNum + "€";
         }
         if (etaNum > 65) {
             distNum = Math.round(((distNum * ticketPrice) - ((distNum * ticketPrice) * (discountO65 / 100))) * 100) / 100;//CALCOLO DELLO SCONTO APPROSSIMATO A 2 CIFRE DECIMALI
             console.log("Il prezzo del biglietto è di " + distNum + "€");
-            clientName.innerHTML = nomeUtente.value;
             ticketType.innerHTML = "Biglietto Over 65";
-            elementCarrozza.innerHTML = nCarrozza;
-            elementCode.innerHTML = cpCode;
-            price.innerHTML = distNum + "€";
         }
+        clientName.innerHTML = nomeUtente.value;
+        elementCarrozza.innerHTML = nCarrozza;
+        elementCode.innerHTML = cpCode;
+        price.innerHTML = distNum + "€";
     } else {
         alert("Inserisci bene i dati");
     }
