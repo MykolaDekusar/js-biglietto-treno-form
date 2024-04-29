@@ -3,3 +3,39 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-100 {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+h1 {
+    margin-bottom: 5rem;
+}
+
+p {
+    margin-bottom: 0.5rem;
+}
+
+.row .col-100:last-child {
+    margin-top: 3rem;
+    gap: 2rem;
+}
+
+/* UTILITIES */
+.space-around {
+    justify-content: space-around;
+}
